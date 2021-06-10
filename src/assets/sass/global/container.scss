@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @include viewport--lg {
+    padding: 0 $padding--lg;
+  }
+
+  @include viewport--md {
+    padding: 0 $padding--md;
+  }
+
+  @include viewport--sm {
+    padding: 0 $padding--sm;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1517px;
+  }
+
+  &--no-padding {
+    @include viewport--sm {
+      padding: 0;
+    }
+  }
+}
