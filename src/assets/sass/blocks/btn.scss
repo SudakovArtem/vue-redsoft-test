@@ -1,0 +1,40 @@
+.btn {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 117px;
+  height: 48px;
+  background-color: $color-gondola;
+  color: $color-alice-blue;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  transition: background-color 0.3s ease;
+
+  span:not([class]) {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &.loading {
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #776763;
+  }
+
+  &--in-cart {
+    background-color: #5B3A32;
+
+    svg {
+      margin-right: 4px;
+    }
+  }
+}

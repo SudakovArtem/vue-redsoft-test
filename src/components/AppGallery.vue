@@ -1,15 +1,21 @@
 <template>
-<section class="gallery">
-  <h2 class="h2">Картины эпохи Возрождения</h2>
+<section class="gallery container">
+  <h2 class="h2 gallery__title">Картины эпохи Возрождения</h2>
   <ul class="gallery__list">
     <app-gallery-item
         v-for="item in galleryItems"
+        href="#"
         :key="item.id"
+        :id="item.id"
         :title="item.title"
         :price="item.price"
+        :old-price="item.oldPrice"
         :img-src="item.imgSrc"
+        css-class="gallery__item"
+        :in-cart="item.inCart"
+        :sold="item.sold"
+        :loading="item.loading"
     >
-
     </app-gallery-item>
   </ul>
 </section>
@@ -17,22 +23,21 @@
 
 <script>
 import AppGalleryItem from "@/components/AppGalleryItem";
+import {useStore} from "vuex";
+import {computed} from "vue";
+
 export default {
   name: "AppGallery",
   components: {AppGalleryItem},
-  data() {
+  setup() {
+    const store = useStore()
+    store.commit('loadGallery')
+
+    const galleryItems = computed(() => store.getters.galleryItems)
+
     return {
-      galleryItems: [
-        {id: 'gallery-img1', title: '«Рождение Венеры» Сандро Боттичелли', price: '1 000 000 $', oldPrice: '2 000 000 $', imgSrc: 'gallery-img1'},
-        {id: 'gallery-img2', title: '«Тайная вечеря»  Леонардо да Винчи', price: '3 000 000 $', oldPrice: null, imgSrc: 'gallery-img2'},
-        {id: 'gallery-img3', title: '«Сотворение Адама» Микеланджело', price: '5 000 000 $', oldPrice: '2 000 000 $', imgSrc: 'gallery-img3'},
-        {id: 'gallery-img4', title: '«Урок анатомии»  Рембрандт', price: null, oldPrice: null, imgSrc: 'gallery-img4'},
-      ]
+      galleryItems,
     }
-  }
+  },
 }
 </script>
-
-<style scoped>
-
-</style>

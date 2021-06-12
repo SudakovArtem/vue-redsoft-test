@@ -4,10 +4,10 @@
     <div class="input-wrapper">
       <label>
         <span class="visually-hidden">Поиск</span>
-        <input type="text" id="search" name="search">
+        <input type="text" id="search" name="search" placeholder="Поиск по названию картины" required>
       </label>
-      <button type="submit" class="btn">Найти</button>
     </div>
+    <button type="submit" class="btn">Найти</button>
   </form>
 </div>
 </template>
@@ -17,7 +17,3 @@ export default {
   name: "AppSearchForm"
 }
 </script>
-
-<style scoped>
-
-</style>
