@@ -2,7 +2,7 @@
 <li :class="cssClass">
   <a :href="href" :class="['gallery-item', sold ? 'gallery-item--sold' : null]">
     <div class="gallery-item__img">
-      <img :src="itemImage" :alt="title">
+      <img :src="`img/${imgSrc}.jpg`" :srcset="`img/${imgSrc}@2x.jpg 2x`" :alt="title">
     </div>
     <div class="gallery-item__content">
       <h3 class="gallery-item__title">{{title}}</h3>
@@ -22,8 +22,7 @@
 </template>
 
 <script>
-import {computed} from "vue";
-import AppButton from "@/components/AppButton";
+import AppButton from "@/components/ui/AppButton";
 import {useStore} from "vuex";
 
 export default {
@@ -41,22 +40,14 @@ export default {
     sold: {type: Boolean, required: false},
     loading: {type: Boolean, required: false},
   },
-  setup(props) {
+  setup() {
     const store = useStore()
-    const itemImage = computed(() => {
-      if (!props.imgSrc) {
-        return
-      }
-      const fileName = props.imgSrc.toLowerCase();
-      return require(`../assets/img/${fileName}.jpg`);
-    })
 
     const addToCart = (id) => {
       document.activeElement.blur()
       store.dispatch('loadPeople', id)
     }
     return {
-     itemImage,
       addToCart,
     }
   },

@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import AppSearchForm from "@/components/AppSearchForm";
-import AppLogo from "@/components/AppLogo";
-import AppNav from "@/components/AppNav";
+import AppSearchForm from "@/components/ui/AppSearchForm";
+import AppLogo from "@/components/ui/AppLogo";
+import AppNav from "@/components/ui/AppNav";
 
 export default {
   name: "TheHeader",

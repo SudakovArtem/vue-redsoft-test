@@ -5,8 +5,8 @@
 
   font-display: swap;
   src:
-    url("~@/assets/fonts/merriweather-regular.woff2") format("woff2"),
-    url("~@/assets/fonts/merriweather-regular.woff") format("woff");
+    url("~@/../public/fonts/merriweather-regular.woff2") format("woff2"),
+    url("~@/../public/fonts/merriweather-regular.woff") format("woff");
 }
 
 @font-face {
@@ -16,8 +16,8 @@
 
   font-display: swap;
   src:
-    url("~@/assets/fonts/merriweather-bold.woff2") format("woff2"),
-    url("~@/assets/fonts/merriweather-bold.woff") format("woff");
+    url("~@/../public/fonts/merriweather-bold.woff2") format("woff2"),
+    url("~@/../public/fonts/merriweather-bold.woff") format("woff");
 }
 
 

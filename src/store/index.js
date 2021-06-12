@@ -12,7 +12,6 @@ export default createStore({
                 {text: 'Контакты', href: '#'},
                 {text: 'О галерее', href: '#'},
             ],
-            loading: false
         }
     },
     mutations: {
@@ -71,7 +70,7 @@ export default createStore({
             const item = context.state.galleryItems.find(item => item.id === id)
             item.loading = true
             try {
-                await axios.get('https://jsonplaceholder.typicode.com/posts/1')
+                await axios.get(process.env.VUE_APP_GET_URL)
                 item.inCart = true
                 item.loading = false
                 localStorage.setItem('gallery-items', JSON.stringify(context.state.galleryItems))

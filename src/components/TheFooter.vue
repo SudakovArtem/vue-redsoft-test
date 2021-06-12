@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import AppLogo from "@/components/AppLogo";
-import AppNav from "@/components/AppNav";
+import AppLogo from "@/components/ui/AppLogo";
+import AppNav from "@/components/ui/AppNav";
 
 export default {
   name: "TheFooter",

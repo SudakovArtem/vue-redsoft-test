@@ -2,7 +2,7 @@
   <div class="wrapper">
     <TheHeader/>
     <main>
-      <AppGallery/>
+      <GallerySection/>
     </main>
     <TheFooter/>
   </div>
@@ -10,14 +10,14 @@
 
 <script>
 import TheHeader from "./components/TheHeader";
-import AppGallery from "./components/AppGallery";
+import GallerySection from "@/components/gallery/GallerySection";
 import TheFooter from "@/components/TheFooter";
 
 export default {
   name: 'App',
   components: {
     TheFooter,
-    AppGallery,
+    GallerySection,
     TheHeader,
   }
 }

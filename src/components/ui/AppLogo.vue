@@ -160,14 +160,8 @@
 <script>
 export default {
   props: {
-    cssClass: {
-      type: String,
-      required: false
-    },
-    href: {
-      type: String,
-      required: false
-    }
+    cssClass: {type: String, required: false},
+    href: {type: String, required: false}
   },
   name: "AppLogo"
 }

@@ -27,11 +27,11 @@
 
   &:hover,
   &:focus {
-    background-color: #776763;
+    background-color: $color-russett;
   }
 
   &--in-cart {
-    background-color: #5B3A32;
+    background-color: $color-cioccolato;
 
     svg {
       margin-right: 4px;
