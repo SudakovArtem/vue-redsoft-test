@@ -1,5 +1,5 @@
 <template>
-  <button :class="['btn', loading ? 'loading' : null, inCart ? 'btn--in-cart' : null, cssClass]" @click="onButtonClick(id, inCart)">
+  <button :class="['btn', loading ? 'loading' : null, inCart ? 'btn--in-cart' : null, cssClass]" @click.prevent.stop="onButtonClick(id, inCart)">
     <span v-if="loading" class="loader"></span>
     <span v-else>
       <svg v-if="inCart" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
